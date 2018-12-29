@@ -4,12 +4,8 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
 */
-
-/* pretemplate css */
-.list-group-item {
-    line-height: 2.5;
-  }
 body {
+    text-align: center;
 	font-size: 15px;
     line-height: 1.52;
     color: #717f86;
@@ -45,7 +41,7 @@ table {
 #banner h2{
     font-family: 'Satisfy', sans-serif;
     font-size: 45px;
-    color: rgb(59, 255, 124);
+    color: rgba(49, 197, 99, 0.87);
 }
 #banner p{
     font-family: 'PT Sans', sans-serif;
@@ -59,7 +55,7 @@ table {
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     margin-top: 140px;
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
 }
 .sidenav {
     height: 100%;
@@ -104,7 +100,7 @@ table {
 }
 
 .header-h {
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
     font-size: 46px;
     font-family: 'Satisfy', sans-serif;
     font-weight: 300;
@@ -133,7 +129,7 @@ table {
     margin-top: 18px;
 }
 .bg-1 {
-    background-color:  rgb(59, 255, 124);
+    background-color:   rgba(49, 197, 99, 0.87);
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -202,7 +198,7 @@ table {
     height: auto;
 }
 .contacts-btn {
-    background-color:   rgb(59, 255, 124) !important;
+    background-color:    rgba(49, 197, 99, 0.87) !important;
     color: #ffffff !important;
     width: 170px;
     height: 54px;
@@ -257,7 +253,7 @@ table {
 
 .heading{
     font-family: 'Satisfy', sans-serif;
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
     font-size: 24px;
 }
 .marb-35{
@@ -268,11 +264,11 @@ table {
 }
 .details-list ul li i {
     margin-right: 10px;
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
 }
 #about img
 {
-    border: 5px solid  rgb(59, 255, 124);
+    border: 5px solid   rgba(49, 197, 99, 0.87);
     border-radius: 2px;
 }
 #event{
@@ -296,13 +292,13 @@ table {
     overflow: auto;
 }
 .content-holder h2 {
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
     font-size: 32px;
     padding-bottom: 15px;
     font-family: 'Satisfy', sans-serif;
 }
 .content-holder address strong {
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
     padding: 10px 0px;
 }
 .details-text p {
@@ -312,7 +308,7 @@ table {
     font-weight: 300;
 }
 .btn-read-more {
-    background:  rgb(59, 255, 124);
+    background:   rgba(49, 197, 99, 0.87);
     padding: 7px 19px;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -342,7 +338,7 @@ table {
     font-family: Montserrat,arial;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
 }
 .menu-restaurant .menu-line {
     position: absolute;
@@ -370,9 +366,9 @@ table {
 }
 
 #menu-flters ul li a.active, #menu-flters ul li a:hover {
-    background:  rgb(59, 255, 124);
+    background:   rgba(49, 197, 99, 0.87);
     color: #fff;
-    border: 1px solid  rgb(59, 255, 124);
+    border: 1px solid   rgba(49, 197, 99, 0.87);
 }
 #menu-flters ul li {
     display: inline-block;
@@ -415,7 +411,7 @@ table {
     padding-bottom: 20px;
     font-family: 'Satisfy', sans-serif;
     font-size: 44px;
-    color:  rgb(59, 255, 124);
+    color:   rgba(49, 197, 99, 0.87);
 }
 .footer .widget, .footer address {
     color: #999;
