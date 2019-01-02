@@ -11,6 +11,7 @@ CREATE TABLE kingTable
   event_name VARCHAR(30) NOT NULL,
   event_location VARCHAR(255) NOT NULL,
   event_date TIMESTAMP NOT NULL,
+  event_time TIMESTAMP NOT NULL,
   event_description VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL,
   PRIMARY KEY
