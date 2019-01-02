@@ -7,11 +7,15 @@ module.exports = function (app) {
 });
 
 app.get("/host", function (req, res) {
-  res.render("index");
+  res.render("host");
+});
+
+app.get("/host2", function (req, res) {
+  res.render("host2");
 });
 
 app.get("/view", function (req, res) {
-  res.render("index");
+  res.render("view");
 });
 
 app.get("*", function (req, res) {
