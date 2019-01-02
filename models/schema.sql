@@ -10,8 +10,7 @@ CREATE TABLE kingTable
   host_id INT NOT NULL,
   event_name VARCHAR(30) NOT NULL,
   event_location VARCHAR(255) NOT NULL,
-  event_date TIMESTAMP NOT NULL,
-  event_time TIMESTAMP NOT NULL,
+  event_date DATETIME NOT NULL,
   event_description VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL,
   PRIMARY KEY
@@ -20,7 +19,7 @@ CREATE TABLE kingTable
 
 CREATE TABLE eventTable
 (
-id INT AUTO_INCREMENT NOT NULL,
+event_id INT NOT NULL,
 item VARCHAR(100) NOT NULL,
 quantity INT NOT NULL,
 item_type VARCHAR(30) NOT NULL,
@@ -33,10 +32,9 @@ PRIMARY KEY
 
 CREATE TABLE users
 (
-    id INT AUTO_INCREMENT NOT NULL,
     user_name VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
     PRIMARY KEY 
-    (id)
+    (user_name)
 )
 
