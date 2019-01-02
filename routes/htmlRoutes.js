@@ -30,8 +30,6 @@ app.get("/host2", function (req, res) {
   res.render("host2");
 });
 
-});
-
 app.get("*", function (req, res) {
   res.render("404");
 });
