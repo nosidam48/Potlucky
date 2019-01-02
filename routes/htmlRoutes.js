@@ -8,6 +8,7 @@ module.exports = function (app) {
 
 app.get("/host", function (req, res) {
   res.render("host");
+
 });
 
 app.get("/view", function (req, res) {
@@ -23,6 +24,12 @@ app.get("/view", function (req, res) {
       events: dbEvents
     });
 });
+});
+
+app.get("/host2", function (req, res) {
+  res.render("host2");
+});
+
 });
 
 app.get("*", function (req, res) {
