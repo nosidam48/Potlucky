@@ -15,7 +15,7 @@ CREATE TABLE kingTable
   category VARCHAR(255) NOT NULL,
   PRIMARY KEY
   (id)
-)
+);
 
 CREATE TABLE eventTable
 (
@@ -28,7 +28,7 @@ bringer_id INT,
 bringer_name VARCHAR(255),
 PRIMARY KEY
 (id)
-)
+);
 
 CREATE TABLE users
 (
