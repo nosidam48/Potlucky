@@ -11,7 +11,7 @@ CREATE TABLE eventTable
   event_name VARCHAR(30) NOT NULL,
   event_location VARCHAR(255) NOT NULL,
   event_date DATETIME NOT NULL,
-  event_description VARCHAR(255) NOT NULL,
+  event_description VARCHAR(255),
   category VARCHAR(255) NOT NULL,
   PRIMARY KEY
   (id)
@@ -26,8 +26,6 @@ item_type VARCHAR(30) NOT NULL,
 cost DECIMAL,
 bringer_id INT,
 bringer_name VARCHAR(255),
-PRIMARY KEY
-(event_id)
 );
 
 CREATE TABLE users
