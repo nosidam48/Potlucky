@@ -7,6 +7,7 @@ module.exports = function (app) {
     res.render("index");
 });
 
+
 app.get("/host", function (req, res) {
   res.render("host");
 });
@@ -27,8 +28,6 @@ app.get("/view", function (req, res) {
     });
 });
 });
-
-
 
 app.get("*", function (req, res) {
   res.render("404");
