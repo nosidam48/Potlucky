@@ -17,6 +17,10 @@ body {
 ol, ul {
 	list-style: none;
 }
+h3{
+    font-family: 'Open Sans', sans-serif;
+    color: white,    
+}
 blockquote, q {
 	quotes: none;
 }
