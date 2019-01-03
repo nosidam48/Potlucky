@@ -10,10 +10,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        host_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         event_name: {
             type: DataTypes.STRING,
             allowNull: false
