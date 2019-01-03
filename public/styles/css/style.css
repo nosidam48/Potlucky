@@ -17,6 +17,10 @@ body {
 ol, ul {
 	list-style: none;
 }
+h3{
+    font-family: 'Open Sans', sans-serif;
+    color: white,    
+}
 blockquote, q {
 	quotes: none;
 }
@@ -30,7 +34,7 @@ table {
 	border-spacing: 0;
 }
 #banner{
-    background: url(../img/banner-bg.jpg) no-repeat center top;
+    background: url(../img/frontpage.jpg) no-repeat center top;
     background-size: cover;
     min-height: 630px;
 }
