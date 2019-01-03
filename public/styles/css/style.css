@@ -276,7 +276,7 @@ table {
     border-radius: 2px;
 }
 #event{
-    background: url('../img/res02.jpg') no-repeat;
+    background: url('../img/viewpage.jpg') no-repeat;
     background-size: cover;
 }
 .left-images img {
@@ -291,7 +291,7 @@ table {
 }
 .details-text {
     background-color: rgba(14, 4, 4, 0.70);
-    border-right: 2px solid #A87F41;
+    border-right: 2px solid rgba(49, 197, 99, 0.87);
     padding: 20px 20px 30px 30px;
     overflow: auto;
 }

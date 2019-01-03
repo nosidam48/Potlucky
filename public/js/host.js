@@ -1,10 +1,7 @@
 // optionsArray
 let optionsArray = ["Food","Beverage","Equipment","Entertainment"];
-var optionsAsString = "";
-let itemId = 0;
 
 $("#add-items").on("click", function() {
-    itemId++;
     $("#item-form").prepend(
         "<div class='form-group row'>\
             <label for='example-text-input'>Name</label>\
@@ -17,6 +14,12 @@ $("#add-items").on("click", function() {
             </div>\
             <label for='itemType'>Type</label>\
             <select></select>\
+            <select name='type'>\
+            <option>Food</option>\
+            <option>Beverage</option>\
+            <option>Equipment</option>\
+            <option>Entertainment</option>\
+            </select>\
             <label for='example-text-input'>Cost</label>\
             <div class=''>\
                 <input class='form-control' type='text' value='' id='item-name'>\
