@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         user_password: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     });
     return users;
   };
