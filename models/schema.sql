@@ -3,7 +3,7 @@ CREATE DATABASE potLucky;
 
 USE potLucky;
 
-CREATE TABLE kingTable
+CREATE TABLE eventTable
 (
     id INT AUTO_INCREMENT NOT NULL,
   host_name VARCHAR(255) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE kingTable
   (id)
 );
 
-CREATE TABLE eventTable
+CREATE TABLE itemTable
 (
 event_id INT NOT NULL,
 item VARCHAR(100) NOT NULL,
@@ -27,7 +27,7 @@ cost DECIMAL,
 bringer_id INT,
 bringer_name VARCHAR(255),
 PRIMARY KEY
-(id)
+(event_id)
 );
 
 CREATE TABLE users
