@@ -7,7 +7,6 @@ CREATE TABLE eventTable
 (
     id INT AUTO_INCREMENT NOT NULL,
   host_name VARCHAR(255) NOT NULL,
-  host_id INT NOT NULL,
   event_name VARCHAR(30) NOT NULL,
   event_location VARCHAR(255) NOT NULL,
   event_date DATETIME NOT NULL,
@@ -28,7 +27,7 @@ bringer_id INT,
 bringer_name VARCHAR(255),
 );
 
-CREATE TABLE users
+CREATE TABLE Users
 (
     user_name VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
