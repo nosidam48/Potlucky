@@ -1,10 +1,10 @@
 var db = require("../models");
+console.log(db.itemTable);
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/api/events", function(req, res) {
+    db.events.findAll({}).then(function(dbEvents) {
+      res.json(dbEvents);
     });
   });
 
@@ -15,7 +15,7 @@ module.exports = function(app) {
       console.log(dbEvents.get({plain: true}));
       res.render("host2", {event_id: dbEvents.get({plain: true}).id})
       
-      
+    
     });
   });
   // Create a new example
@@ -29,6 +29,7 @@ module.exports = function(app) {
   }
   else {
     db.itemTable.create({event_id: req.body.mydata, item: req.body.itemName, quantity: req.body.quantity, item_type: req.body.type, cost: req.body.cost, bringer_id: 2, bringer_name: req.body.yourName}).then(function(dbItems) {
+
       // console.log(res.json(dbItems));
     });
   }

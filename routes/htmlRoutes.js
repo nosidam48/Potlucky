@@ -1,22 +1,35 @@
 var db = require("../models");
+const Op = db.Sequelize.Op
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+  app.get("/", function (req, res) {
+    res.render("index");
+});
 
+
+app.get("/host", function (req, res) {
+  res.render("host");
+});
 app.get("/host/:id", function (req, res) {
   res.render("host2", {event_id: req.params.id});
 });
+app.get("/view", function (req, res) {
+  db.eventTable.findAll({
+    limit: 10
+    // where: {event_date: {
+    //   [Op.gte]: Date.now()
+    // },
+    // sort: [event_date, ascending]
+  
+  }).then(function(dbEvents) {
+    res.render("view", {
+      events: dbEvents
+    });
+});
+});
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+app.get("*", function (req, res) {
+  res.render("404");
+});
 };

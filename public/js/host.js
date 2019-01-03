@@ -20,12 +20,14 @@ $("#add-items").on("click", function() {
                 <input class='form-control' name='quantity' type='text' value='' id='item-quantity'>\
             </div>\
             <label for='itemType'>Type</label>\
+
             <select name='type'>\
             <option>Food</option>\
             <option>Beverage</option>\
             <option>Equipment</option>\
             <option>Entertainment</option>\
             </select>\
+
             <label for='example-text-input'>Cost</label>\
             <div class=''>\
                 <input class='form-control' type='text' name='cost' value='' id='item-name'>\
@@ -37,6 +39,7 @@ $("#add-items").on("click", function() {
         </div>\
         </div>"
     )
+
     console.log(event_id);
     
     var input = $("<input>").attr("type", "hidden").attr("name", "mydata").val(event_id);
@@ -48,8 +51,19 @@ $("#add-items").on("click", function() {
         
     // }
     // $( 'select[name='+ parseInt(itemId) +']' ).append( optionsAsString );
+
     
     $(".delete-row").on("click", function() {
         $(this).closest('.row').remove() 
     })
 })
+
+$("#event-button").on("click", function(){
+    event.preventDefault();
+
+})
+
+$("#form-submit").on("click", function(){
+    
+})
+

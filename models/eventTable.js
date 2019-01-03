@@ -1,41 +1,42 @@
-module.exports = function (sequelize, DataTypes) {
-    var items = sequelize.define("itemTable", {
-
+module.exports = function(sequelize, DataTypes) {
+    var events = sequelize.define("eventTable", {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-        event_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-
-        },
-        item: {
+        host_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        quantity: {
+        host_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        item_type: {
+        event_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        cost: {
-            type: DataTypes.DECIMAL,
-        },
-        bringer_id: {
-            type: DataTypes.INTEGER,
-        },
-        bringer_name: {
+        event_location: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        event_date: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        event_description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }, {
         freezeTableName: true,
         timestamps: false
     });
-    return items;
-};
+    return events;
+  };
