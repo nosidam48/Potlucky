@@ -7,19 +7,23 @@ $("#add-items").on("click", function() {
     itemId++;
     $("#item-form").prepend(
         "<div class='form-group row'>\
-            <label for='example-text-input'>Name</label>\
+            <label for='example-text-input'>Your Name</label>\
             <div class=''>\
-                <input class='form-control' name='name' type='text' value='' id='item-name'>\
+                <input class='form-control' name='yourName' type='text' value='' id='your-name'>\
+            </div>\
+            <label for='example-text-input'>Item Name</label>\
+            <div class=''>\
+                <input class='form-control' name='itemName' type='text' value='' id='item-name'>\
             </div>\
             <label for='example-text-input'>Quantity</label>\
             <div class=''>\
-                <input class='form-control' type='text' value='' id='item-quantity'>\
+                <input class='form-control' name='quantity' type='text' value='' id='item-quantity'>\
             </div>\
             <label for='itemType'>Type</label>\
             <select></select>\
             <label for='example-text-input'>Cost</label>\
             <div class=''>\
-                <input class='form-control' type='text' value='' id='item-name'>\
+                <input class='form-control' type='text' name='cost' value='' id='item-name'>\
             </div>\
             <div class=>\
             <button class='btn btn-success btn-delete delete-row' id='delete-row' type='button'>\
@@ -36,13 +40,16 @@ $("#add-items").on("click", function() {
         
     }
     $( 'select[name='+ itemId +']' ).append( optionsAsString );
-    console.log(parseInt(optionsArray[i]));
-    console.log(optionsArray[i]);
     
     $(".delete-row").on("click", function() {
-        console.log("this click worked");
         $(this).closest('.row').remove() 
     })
 })
+$("#event-button").on("click", function(){
+    event.preventDefault();
 
-$("#form-submit").on("click", )
+})
+
+$("#form-submit").on("click", function(){
+    
+})

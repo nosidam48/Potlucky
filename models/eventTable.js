@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            auto_increment: true,
+            autoIncrement: true,
             primaryKey: true
         },
         host_name: {
@@ -34,6 +34,8 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         }
+    }, {
+        freezeTableName: true
     });
     return events;
   };

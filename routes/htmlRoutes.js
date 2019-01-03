@@ -8,8 +8,12 @@ module.exports = function (app) {
 
 app.get("/host", function (req, res) {
   res.render("host");
-
 });
+
+// app.post("/host", function (req, res) {
+//   console.log(req.body);
+  
+// });
 
 app.get("/view", function (req, res) {
   db.eventTable.findAll({

@@ -26,6 +26,8 @@ module.exports = function (sequelize, DataTypes) {
         bringer_name: {
             type: DataTypes.STRING,
         }
+    }, {
+        freezeTableName: true
     });
     return items;
 };
