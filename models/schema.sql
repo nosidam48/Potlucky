@@ -26,9 +26,7 @@ item_type VARCHAR(30) NOT NULL,
 cost DECIMAL,
 bringer_id INT,
 bringer_name VARCHAR(255),
-PRIMARY KEY
-(id)
-)
+);
 
 CREATE TABLE users
 (
