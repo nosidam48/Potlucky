@@ -38,9 +38,15 @@ table {
     background-size: cover;
     min-height: 630px;
 }
+.headerSmall{
+    background: url(../img/frontpage.jpg) no-repeat center top;
+    background-size: cover;
+    max-height: 200px;
+    }
+
 .bg-color{
     background-color: RGBA(0, 0, 0, 0.61);
-    min-height: 630px;
+ 
 }
 #banner h2{
     font-family: 'Satisfy', sans-serif;
@@ -59,6 +65,12 @@ table {
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     margin-top: 140px;
+    color:   rgba(49, 197, 99, 0.87);
+}
+
+#logo2 {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 65px;
     color:   rgba(49, 197, 99, 0.87);
 }
 .sidenav {
