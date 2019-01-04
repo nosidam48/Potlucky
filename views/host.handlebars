@@ -1,36 +1,39 @@
-  <!--banner-->
-  <section id="banner">
-    <div class="bg-color">
-      <header id="header">
-        <div class="container">
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="login">Log In</a>
-            <a href="index">About</a>
-            <a href="host">Host An Event</a>
-            <a href="view">View Current Events</a>
-          </div>
-          <!-- Use any element to open the sidenav -->
-          <span onclick="openNav()" class="pull-right menu-icon">☰</span>
-        </div>
-      </header>
+<!--banner-->
+<section class="headerSmall">
+  <div class="bg-color">
+    <header id="header">
       <div class="container">
-        <div class="row">
-          <div class="inner text-center">
-            <h1 class="logo-name">PotLucky</h1>
-            <h2>Plan any event without the stress!</h2>
-            <h2>No necessity left behind!</h2>
-          </div>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          {{#unless user}}
+          <a href="login">Log In</a>
+          {{/unless}}
+          {{#if user}}
+          <a href="logout">Log Out</a>
+          {{/if}}
+          <a href="/">About</a>
+          <a href="host">Host An Event</a>
+          <a href="view">View Current Events</a>
+        </div>
+        <!-- Use any element to open the sidenav -->
+        <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="inner text-center">
+          <h1 id="logo2">PotLucky</h1>
         </div>
       </div>
     </div>
-  </section>
-  <!-- / banner -->
+  </div>
+</section>
+<!-- / banner -->
 <div class="container">
   <h1>Create an Event</h1>
 
-<form action="/host" method="post" id="event-form">
-
+  <form action="/host" method="post" id="event-form" role="form" class="contactForm">
+    <div id="sendmessage">Your event has been created. Thank you!</div>
     <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
   <div class="col-10">
@@ -70,52 +73,88 @@
       <option>Bake Sale</option>
     </select>
     </div>
-  </div> 
-  <div class="form-group row">
-    <label for="exampleFormControlTextarea1" class="col-2">Party Description</label>
-    <textarea class="form-control col-10" name="description" id="exampleFormControlTextarea1" rows="2"></textarea>
-  </div>
-  <div class="form-group row col-12">
-  <input action="/host" type="submit" class="btn btn-primary" id="event-submit"></input>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Host Name</label>
+      <div class="col-10">
+        <input class="form-control" name="hostName" type="text" value="" id="host-name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Location</label>
+      <div class="col-10">
+        <input class="form-control" name="location" type="text" value="" id="location">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label">Date</label>
+      <div class="col-10">
+        <input class="form-control" name="date" type="date" value="" id="date">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label">Time</label>
+      <div class="col-10">
+        <input class="form-control" name="time" type="time" value="" id="time">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="event-type" class="col-2">Party Type</label>
+      <div class="col-10">
+        <select class="form-control" name="type" id="event-type">
+          <option disabled selected value> -- select an option -- </option>
+          <option>Potluck</option>
+          <option>TailGate</option>
+          <option>Convention</option>
+          <option>Medieval Banquet</option>
+          <option>Bake Sale</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleFormControlTextarea1" class="col-2">Party Description</label>
+      <textarea class="form-control col-10" name="description" id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+    <div class="form-group row col-12">
+      <input action="/host" type="submit" class="btn btn-primary" id="event-submit"></input>
 
-  </div>
-</form>
-</div> 
+    </div>
+  </form>
+</div>
 
-  <!-- footer -->
-  <footer class="footer text-center">
-    <div class="footer-top">
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6 text-center">
-          <div class="widget">
-            <h4 class="widget-title">PotLucky</h4>
-            <address>UCF<br>Orlando, FL</address>
-            <div class="social-list">
-              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            </div>
-            <p class="copyright clear-float">
-              © Delicious Theme. All Rights Reserved
-              <div class="credits">
-                <!--
+<!-- footer -->
+<footer class="footer text-center">
+  <div class="footer-top">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6 text-center">
+        <div class="widget">
+          <h4 class="widget-title">PotLucky</h4>
+          <address>UCF<br>Orlando, FL</address>
+          <div class="social-list">
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://github.com/nosidam48/Potlucky"><i class="fa fa-github" aria-hidden="true"></i></a>
+          </div>
+          <p class="copyright clear-float">
+            © Delicious Theme. All Rights Reserved
+            <div class="credits">
+              <!--
                   All the links in the footer should remain intact.
                   You can delete the links only if you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Delicious
                 -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-            </p>
-          </div>
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </p>
         </div>
       </div>
     </div>
   </footer>
   <!-- / footer -->
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery.easing.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/custom.js"></script>
-  <script src="/js/contactform.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/contactform.js"></script>

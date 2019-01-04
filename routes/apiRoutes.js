@@ -19,6 +19,7 @@ module.exports = function (app) {
 
     });
   });
+  
   // Create a new example
   app.post("/host2", function (req, res) {
     console.log(req.body);
