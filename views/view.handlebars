@@ -1,103 +1,109 @@
-  <!--banner-->
-  <section class="headerSmall">
+<!--banner-->
+<section class="headerSmall">
     <div class="bg-color">
-      <header id="header">
+        <header id="header">
+            <div class="container">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    {{#unless user}}
+                    <a href="login">Log In</a>
+                    {{/unless}}
+                    {{#if user}}
+                    <a href="logout">Log Out</a>
+                    {{/if}}
+                    <a href="/">About</a>
+                    <a href="host">Host An Event</a>
+                    <a href="view">View Current Events</a>
+                </div>
+                <!-- Use any element to open the sidenav -->
+                <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+            </div>
+        </header>
         <div class="container">
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="login">Log In</a>
-            <a href="/">About</a>
-            <a href="host">Host An Event</a>
-            <a href="view">View Current Events</a>
-          </div>
-          <!-- Use any element to open the sidenav -->
-          <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+            <div class="row">
+                <div class="inner text-center">
+                    <h1 id="logo2">PotLucky</h1>
+                </div>
+            </div>
         </div>
-      </header>
-      <div class="container">
-        <div class="row">
-          <div class="inner text-center">
-            <h1 id="logo2">PotLucky</h1>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  <!-- / banner -->
+</section>
+<!-- / banner -->
 
 <!-- view event -->
-  <section id="event">
+<section id="event">
     <div class="bg-color" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center" style="padding:60px;">
-            <h1 class="header-h">Up Coming Events</h1>
-          </div>
-          <div class="col-md-12" style="padding-bottom:60px;">
-            <div class="item active left">
-              {{!-- <div class="col-md-6 col-sm-6 left-images">
-                <img src="/public/styles/img/viewpage.jpg" class="img-responsive">
-              </div> --}}
-              <div class="col-md-12 col-sm-6 details-text">
-                <div class="content-holder">
-                  <h2>View all upcoming events here!</h2>
-                  <p>Looking for an event? Find it with the unique event ID or browse other events on our view page!</p>
-                  <address>
-                              <strong>Event: </strong>
-                              Kyle's Luau 
-                              <br>
-                              <strong>Host: </strong>
-                              Kyle123
-                              <br>
-                              <strong>ID: </strong>
-                              12345
-                            </address>
-                  <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center" style="padding:60px;">
+                    <h1 class="header-h">Up Coming Events</h1>
                 </div>
-              </div>
+                <div class="col-md-12" style="padding-bottom:60px;">
+                    <div class="item active left">
+                        {{!-- <div class="col-md-6 col-sm-6 left-images">
+                            <img src="/public/styles/img/viewpage.jpg" class="img-responsive">
+                        </div> --}}
+                        <div class="col-md-12 col-sm-6 details-text">
+                            <div class="content-holder">
+                                <h2>View all upcoming events here!</h2>
+                                <p>Looking for an event? Find it with the unique event ID or browse other events on our
+                                    view page!</p>
+                                <address>
+                                    <strong>Event: </strong>
+                                    Kyle's Luau
+                                    <br>
+                                    <strong>Host: </strong>
+                                    Kyle123
+                                    <br>
+                                    <strong>ID: </strong>
+                                    12345
+                                </address>
+                                <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-  <!--/ event -->
+</section>
+<!--/ event -->
 
-  <!-- footer -->
-  <footer class="footer text-center">
+<!-- footer -->
+<footer class="footer text-center">
     <div class="footer-top">
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6 text-center">
-          <div class="widget">
-            <h4 class="widget-title">PotLucky</h4>
-            <address>UCF<br>Orlando, FL</address>
-            <div class="social-list">
-              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            </div>
-            <p class="copyright clear-float">
-              © Delicious Theme. All Rights Reserved
-              <div class="credits">
-                <!--
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <div class="widget">
+                    <h4 class="widget-title">PotLucky</h4>
+                    <address>UCF<br>Orlando, FL</address>
+                    <div class="social-list">
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="copyright clear-float">
+                        © Delicious Theme. All Rights Reserved
+                        <div class="credits">
+                            <!--
                   All the links in the footer should remain intact.
                   You can delete the links only if you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Delicious
                 -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-            </p>
-          </div>
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
-  <!-- / footer -->
+</footer>
+<!-- / footer -->
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery.easing.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/custom.js"></script>
-  <script src="/js/contactform.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/contactform.js"></script>
