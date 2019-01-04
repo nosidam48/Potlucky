@@ -19,6 +19,7 @@ $("#add-items").on("click", function() {
             <option>Equipment</option>\
             <option>Entertainment</option>\
             </select>\
+            </div>\
             <label for='example-text-input'>Cost</label>\
             <div class=''>\
                 <input class='form-control' name='cost' type='text' value='' id='item-name'>\
