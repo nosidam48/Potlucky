@@ -41,7 +41,12 @@
       </div>
         <div class="col-md-12 col-sm-12">
           <img src="img/res01.jpg" alt="" class="img-responsive">
-
+                {{#each events}}
+                <div>
+                    {{event_name}}
+                </div>
+                {{/each}}
+            </div>
         </div>
         <div class="col-md-1"></div>
     </div>
