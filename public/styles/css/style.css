@@ -70,12 +70,10 @@ table {
     color: rgb(84, 208, 126);
 
 }
-.login {
-    
-    font-size: 55px;
+#login a {
+    font-size: 27px;
     padding-top: 8%;
-    color: rgb(84, 208, 126);
-    text-shadow: 2px 2px white;
+    color: white;
 }
 
 #logo2 {
