@@ -13,6 +13,7 @@ $("#add-items").on("click", function() {
                 <input class='form-control' name='quantity' type='text' value='' id='item-quantity'>\
             </div>\
             <label for='itemType'>Type</label>\
+            <div class=''>\
             <select name='type'>\
             <option>Food</option>\
             <option>Beverage</option>\
@@ -20,9 +21,9 @@ $("#add-items").on("click", function() {
             <option>Entertainment</option>\
             </select>\
             </div>\
-            <label for='example-text-input'>Cost</label>\
+            <label for='cost'>Cost</label>\
             <div class=''>\
-                <input class='form-control' name='cost' type='text' value='' id='item-name'>\
+                <input class='form-control' name='cost' type='text' id='cost'>\
             </div>\
             <div class=>\
             <button class='btn btn-success btn-delete delete-row' id='delete-row' type='button'>\
