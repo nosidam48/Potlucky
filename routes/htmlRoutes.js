@@ -18,14 +18,28 @@ app.get("/host", function (req, res) {
 app.get("/host/:id", function (req, res) {
   res.render("host2", {event_id: req.params.id});
 });
-app.get("/view", function (req, res) {
+app.get("/view/:category?/:search?", function (req, res) {
+  if (req.params.category) {
+    var category = req.params.category;
+  }
+  else{
+    var category = {[Op.ne]: null};
+  }
+  if (req.params.search) {
+    var search = req.params.search;
+  }
+  else {
+    var search = "event_date";
+  }
   db.eventTable.findAll({
-    limit: 10
-    // where: {event_date: {
-    //   [Op.gte]: Date.now()
-    // },
-    // sort: [event_date, ascending]
-  
+    order: [[search]],
+    limit: 10,
+    where: {
+      "category": category,
+      event_date: {
+      [Op.gte]: Date.now()
+    }
+  }
   }).then(function(dbEvents) {
     res.render("view", {
       events: dbEvents
