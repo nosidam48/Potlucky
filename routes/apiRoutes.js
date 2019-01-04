@@ -9,9 +9,10 @@ module.exports = function (app) {
   });
 
   app.post("/host", function (req, res) {
-    console.log(req.body.date + " " + req.body.time + ":00");
+    console.log(req.body.date);
+    console.log(req.body.date + " " + req.body.time);
 
-    db.eventTable.create({ host_name: req.body.hostName, event_name: req.body.eventName, event_location: req.body.location, event_date: req.body.date + " " + req.body.time + ":00", event_description: req.body.description, category: req.body.type }).then(function (dbEvents) {
+    db.eventTable.create({ host_name: req.body.host_name, event_name: req.body.eventName, event_location: req.body.location, event_date: (req.body.date + "T" + req.body.time+":00.000Z"), event_description: req.body.description, category: req.body.type }).then(function (dbEvents) {
       console.log(dbEvents.get({ plain: true }));
       res.render("host2", { event_id: dbEvents.get({ plain: true }).id })
 

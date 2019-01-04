@@ -13,7 +13,7 @@ module.exports = function (app) {
 
 
 app.get("/host", function (req, res) {
-  res.render("host");
+  res.render("host", {user: req.user});
 });
 app.get("/host/:id", function (req, res) {
   res.render("host2", {event_id: req.params.id});

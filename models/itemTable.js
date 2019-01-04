@@ -21,9 +21,6 @@ module.exports = function (sequelize, DataTypes) {
         cost: {
             type: DataTypes.DECIMAL,
         },
-        bringer_id: {
-            type: DataTypes.INTEGER,
-        },
         bringer_name: {
             type: DataTypes.STRING,
         }

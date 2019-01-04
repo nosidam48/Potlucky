@@ -37,11 +37,8 @@
     <input class="form-control" name="eventName" type="text" value="" id="event-name">
   </div>
   </div>
-  <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Host Name</label>
-  <div class="col-10">
-    <input class="form-control" name="hostName" type="text" value="" id="host-name">
-  </div>
+  <div class="form-group">
+    <input type="hidden" name="host_name" id="host_name" value="{{user.username}}">
   </div>
   <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Location</label>
@@ -115,7 +112,6 @@
     </div>
   </footer>
   <!-- / footer -->
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
   <script src="/js/jquery.min.js"></script>
