@@ -36,13 +36,13 @@ app.get("/login", function(req, res) {
   if (req.user) {
     res.redirect("/");
   }
-  res.sendFile(path.join(__dirname, "../public/login.html"));
+  res.render("login");
 });
 app.get("/signup", function(req, res) {
   if (req.user) {
     res.redirect("/")
   }
-  res.sendFile(path.join(__dirname, "../public/signup.html"));
+  res.render("signup");
 });
 app.get("*", function (req, res) {
   res.render("404");
