@@ -2,14 +2,43 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
+  app.get("/api/events", function (req, res) {
+    db.events.findAll({}).then(function (dbEvents) {
+      res.json(dbEvents);
+    });
+  });
+
+  app.post("/host", function (req, res) {
+    console.log(req.body.date + " " + req.body.time + ":00");
+
+    db.eventTable.create({ host_name: req.body.hostName, event_name: req.body.eventName, event_location: req.body.location, event_date: req.body.date + " " + req.body.time + ":00", event_description: req.body.description, category: req.body.type }).then(function (dbEvents) {
+      console.log(dbEvents.get({ plain: true }));
+      res.render("host2", { event_id: dbEvents.get({ plain: true }).id })
+
+
+    });
+  });
+  // Create a new example
+  app.post("/host2", function (req, res) {
+    console.log(req.body);
+    if (Array.isArray(req.body.itemName)) {
+      for (var i = 0; i < req.body.itemName.length; i++)
+        db.itemTable.create({ event_id: req.body.mydata[i], item: req.body.itemName[i], quantity: req.body.quantity[i], item_type: req.body.type[i], cost: req.body.cost[i] }).then(function (dbItems) {
+          // console.log(res.json(dbItems));
+        });
+    }
+    else {
+      db.itemTable.create({ event_id: req.body.mydata, item: req.body.itemName, quantity: req.body.quantity, item_type: req.body.type, cost: req.body.cost }).then(function (dbItems) {
+
+        // console.log(res.json(dbItems));
+      });
+    }
+  });
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+    res.json("/");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -18,7 +47,7 @@ module.exports = function (app) {
   app.post("/api/signup", function (req, res) {
     console.log(req.body);
     db.User.create({
-      email: req.body.email,
+      username: req.body.username,
       password: req.body.password
     }).then(function () {
       res.redirect(307, "/api/login");
@@ -45,46 +74,10 @@ module.exports = function (app) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-        email: req.user.email,
+        username: req.user.email,
         id: req.user.id
       });
     }
   });
-
-};
-module.exports = function (app) {
-  app.get("/api/events", function (req, res) {
-    db.events.findAll({}).then(function (dbEvents) {
-      res.json(dbEvents);
-    });
-  });
-
-  app.post("/host", function(req, res) {
-    console.log(req.body.date + " " + req.body.time + ":00");
-    
-    db.eventTable.create({host_name: req.body.hostName, event_name: req.body.eventName, event_location: req.body.location, event_date: req.body.date + " " + req.body.time + ":00", event_description: req.body.description, category: req.body.type}).then(function(dbEvents) {
-      console.log(dbEvents.get({plain: true}));
-      res.render("host2", {event_id: dbEvents.get({plain: true}).id})
-      
-    
-    });
-  });
-  // Create a new example
-  app.post("/host2", function(req, res) {
-    console.log(req.body);
-    if (Array.isArray(req.body.itemName)) {
-    for (var i = 0; i < req.body.itemName.length; i++)
-    db.itemTable.create({event_id: req.body.mydata[i], item: req.body.itemName[i], quantity: req.body.quantity[i], item_type: req.body.type[i], cost: req.body.cost[i]}).then(function(dbItems) {
-      // console.log(res.json(dbItems));
-    });
-  }
-  else {
-    db.itemTable.create({event_id: req.body.mydata, item: req.body.itemName, quantity: req.body.quantity, item_type: req.body.type, cost: req.body.cost}).then(function(dbItems) {
-
-      // console.log(res.json(dbItems));
-    });
-  }
-  });
-
 };
 
