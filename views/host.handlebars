@@ -34,8 +34,7 @@
 <div class="container">
   <h1>Create an Event</h1>
 
-  <form action="/host" method="post" id="event-form" role="form" class="contactForm">
-    <div id="sendmessage">Your event has been created. Thank you!</div>
+  <form action="/host" method="post" id="event-form">
     <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
   <div class="col-10">
@@ -74,43 +73,6 @@
       <option>Medieval Banquet</option>
       <option>Bake Sale</option>
     </select>
-    </div>
-    <div class="form-group row">
-      <label for="example-text-input" class="col-2 col-form-label">Host Name</label>
-      <div class="col-10">
-        <input class="form-control" name="hostName" type="text" value="" id="host-name">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="example-text-input" class="col-2 col-form-label">Location</label>
-      <div class="col-10">
-        <input class="form-control" name="location" type="text" value="" id="location">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="example-date-input" class="col-2 col-form-label">Date</label>
-      <div class="col-10">
-        <input class="form-control" name="date" type="date" value="" id="date">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="example-time-input" class="col-2 col-form-label">Time</label>
-      <div class="col-10">
-        <input class="form-control" name="time" type="time" value="" id="time">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="event-type" class="col-2">Party Type</label>
-      <div class="col-10">
-        <select class="form-control" name="type" id="event-type">
-          <option disabled selected value> -- select an option -- </option>
-          <option>Potluck</option>
-          <option>TailGate</option>
-          <option>Convention</option>
-          <option>Medieval Banquet</option>
-          <option>Bake Sale</option>
-        </select>
-      </div>
     </div>
     <div class="form-group row">
       <label for="exampleFormControlTextarea1" class="col-2">Party Description</label>

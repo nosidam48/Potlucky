@@ -38,31 +38,33 @@
                 <h1 class="header-h">Upcoming Events!</h1>
                 <p class="header-p">Find your event or browse all our upcoming events.
                     <br>Search by using the event name, user name, or unique ID.</p>
-                    </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/view/Potluck">Potluck</a>
-                        <a class="dropdown-item" href="/view/Convention">Convention</a>
-                        <a class="dropdown-item" href="/view/TailGate">TailGate</a>
-                        <a class="dropdown-item" href="/view/Medieval%20Banquet">Medieval Banquet</a>
-                        <a class="dropdown-item" href="/view/Bake%20Sale">Bake Sale</a>
-                    </div>
-                </div>
-
-                <br>
-                <p>this is a test</p>
-                {{#each events}}
-                <div>
-                    {{event_name}}
-                </div>
-                {{/each}}
             </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/view/Potluck">Potluck</a>
+                    <a class="dropdown-item" href="/view/Convention">Convention</a>
+                    <a class="dropdown-item" href="/view/TailGate">TailGate</a>
+                    <a class="dropdown-item" href="/view/Medieval%20Banquet">Medieval Banquet</a>
+                    <a class="dropdown-item" href="/view/Bake%20Sale">Bake Sale</a>
+                </div>
+            </div>
+
+            <br>
+            <p>this is a test</p>
+            {{#each events}}
+            <div>
+            <a href="/view2/{{[id]}}" id="{{[id]}}">
+                {{event_name}}
+                </a>
+            </div>
+            {{/each}}
         </div>
-        <div class="col-md-1"></div>
+    </div>
+    <div class="col-md-1"></div>
     </div>
     </div>
 </section>
