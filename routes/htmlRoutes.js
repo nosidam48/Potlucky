@@ -73,7 +73,16 @@ app.get("/view2", function (req, res) {
 })
 
 app.get("/view2/:id?", function (req, res) {
-  
+  var eventId = req.params.id;
+  db.itemTable.findAll({
+    where: {
+      event_id: eventId
+    }
+  }).then(function(dbItems) {
+    res.render("view2", {
+      items: dbItems
+    })
+  })
 })
 
 app.get("/login", function(req, res) {
