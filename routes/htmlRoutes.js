@@ -67,6 +67,15 @@ app.get("/viewby/:search/:category?", function (req, res) {
     });
 });
 });
+
+app.get("/view2", function (req, res) {
+  res.render("view2")
+})
+
+app.get("/view2/:id?", function (req, res) {
+  
+})
+
 app.get("/login", function(req, res) {
   if (req.user) {
     res.redirect("/");
