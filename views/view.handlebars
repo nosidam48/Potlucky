@@ -44,65 +44,105 @@
         </div>
 
         <div class="dropup pull-left">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <button class="btn btn-imfo btn-read-more" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Party Types
+                Party Categories
             </button>
             <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
                 <li>
-                <a class="dropdown-item" href="/view/Potluck">Potluck</a>
+                    <a class="dropdown-item" href="/view/Potluck">Potluck</a>
                 </li>
                 <li>
-                <a class="dropdown-item" href="/view/Convention">Convention</a>
+                    <a class="dropdown-item" href="/view/Convention">Convention</a>
                 </li>
                 <li>
-                <a class="dropdown-item" href="/view/TailGate">TailGate</a>
+                    <a class="dropdown-item" href="/view/TailGate">TailGate</a>
                 </li>
                 <li>
-                <a class="dropdown-item" href="/view/Medieval%20Banquet">Medieval Banquet</a>
+                    <a class="dropdown-item" href="/view/Medieval%20Banquet">Medieval Banquet</a>
                 </li>
                 <li>
-                <a class="dropdown-item" href="/view/Bake%20Sale">Bake Sale</a>
+                    <a class="dropdown-item" href="/view/Bake%20Sale">Bake Sale</a>
                 </li>
             </div>
         </div>
-
         <br>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th class="text-center" scope="col">Event Name</th>
-                    <th class="text-center" scope="col">Event Date</th>
-                    <th class="text-center" scope="col">Event Location</th>
-                    <th class="text-center" scope="col">Host Name</th>
-                    <th class="text-center" scope="col">Event description</th>
-                    <th class="text-center" scope="col">Event Category</th>
-                </tr>
-            </thead>
-            <tbody>
+        <!--Event Cards-->
+        <br>
+        <br>
+        <br>
+        {{#each events}}
+        <div class="content-holder">
+            <div class="card" class="col-md-6 col-sm-12 details-text">
+                <img src="../styles/img/potluck.jpg" class="card-img-top" style="height:20rem">
+                <div class="card-body">
 
-                {{#each events}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td id="event-button"><a href="/view2/{{[id]}}" id="{{[id]}}">
-                            {{event_name}}
-                        </a></td>
-                    <td>{{event_date}}</td>
-                    <td>{{event_location}}</td>
-                    <td>{{host_name}}</td>
-                    <td>{{event_description}}</td>
-                    <td>{{category}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
-    </div>
-    <div class="col-md-1"></div>
-    </div>
+                    <h2>{{event_name}}</h2>
+                    <address>
+                        <strong>ID: </strong>
+                        {{id}}
+                        <br>
+                        <strong>Date: </strong>
+                        {{event_date}}
+                        <br>
+                        <strong>Host: </strong>
+                        {{host_name}}
+                        <br>
+                        <strong>Location: </strong>
+                        {{event_location}}
+                        <br>
+                        <strong>Description: </strong>
+                        {{event_description}}
+                        <br>
+                        <strong>Category: </strong>
+                        {{category}}
+                    </address>
+                    <a class="btn btn-imfo btn-read-more" href="/view2/{{[id]}}" id="{{[id]}}">View Event</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </section>
+
+<!--/Event Cards-->
+
+{{!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th class="text-center" scope="col">Event Name</th>
+            <th class="text-center" scope="col">Event Date</th>
+            <th class="text-center" scope="col">Event Location</th>
+            <th class="text-center" scope="col">Host Name</th>
+            <th class="text-center" scope="col">Event description</th>
+            <th class="text-center" scope="col">Event Category</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each events}}
+        <tr>
+            <td>{{id}}</td>
+            <td id="event-button"><a href="/view2/{{[id]}}" id="{{[id]}}">
+                    {{event_name}}
+                </a></td>
+            <td>{{event_date}}</td>
+            <td>{{event_location}}</td>
+            <td>{{host_name}}</td>
+            <td>{{event_description}}</td>
+            <td>{{category}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+</div>
+<div class="col-md-1"></div>
+</div>
+</div>
+</section> --}} 
 <!-- footer -->
 <footer class="footer text-center">
     <div class="footer-top">
