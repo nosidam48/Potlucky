@@ -8,8 +8,17 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    res.render("index", { user: req.user });
-  });
+    db.eventTable.findAll({
+      limit: 1,
+      order: [["event_date"]],
+      where: {event_date: {
+        [Op.gte]: Date.now()
+      }
+    }
+    }).then(function (dbEvents) {
+    res.render("index", { event: dbEvents, user: req.user });
+  })
+});
 
   // A get route at host to display the host.handlebars page
   app.get("/host", function (req, res) {

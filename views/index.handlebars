@@ -10,9 +10,7 @@
           {{/unless}}
           {{#if user}}
           <a href="logout">Log Out</a>
-          {{/if}}
-          <a href="/">About</a>
-          {{#if user}}
+
           <a href="host">Host An Event</a>
           {{/if}}
           <a href="view">View Current Events</a>
@@ -96,18 +94,22 @@
             </div> --}}
             <div class="col-md-12 col-sm-6 details-text">
               <div class="content-holder">
-                <h2>View all upcoming events!</h2>
-                <p>Looking for an event? Find it with the unique event ID or browse other events on our view page!</p>
+                {{#each event}}
+                <h2>{{event_name}}</h2>
                 <address>
-                  <strong>Event: </strong>
-                  Kyle's Medieval Banquet
-                  <br>
                   <strong>Host: </strong>
-                  SirKyleOfKensington
+                  {{host_name}}
                   <br>
-                  <strong>ID: </strong>
-                  12345
+                  <strong>Location: </strong>
+                  {{event_location}}
+                  <br>
+                  <strong>Date: </strong>
+                  {{event_date}}
+                  <br>
+                  <strong>Description: </strong>
+                  {{event_description}}
                 </address>
+                {{/each}}
                 <a class="btn btn-imfo btn-read-more" href="/view">See more</a>
               </div>
             </div>
