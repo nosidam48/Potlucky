@@ -349,6 +349,14 @@ table {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+#host-btn{
+    margin-top: 50px;
+    height: 7rem;
+    width: 38rem;
+    padding: 25px;
+    font-size: 3rem;
+    color: white;
+}
 .btn-read-more:hover
 {
     color: #000;
