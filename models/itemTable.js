@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         cost: {
             type: DataTypes.DECIMAL,
-            defaultValue: Null
+            defaultValue: null
         },
         bringer_name: {
             type: DataTypes.STRING,
