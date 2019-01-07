@@ -19,7 +19,7 @@ ol, ul {
 }
 h3{
     font-family: 'Open Sans', sans-serif;
-    color: white,    
+    color: white,
 }
 blockquote, q {
 	quotes: none;
@@ -46,7 +46,11 @@ table {
 
 .bg-color{
     background-color: RGBA(0, 0, 0, 0.61);
- 
+
+}
+
+.content-holder{
+    border-top: solid 5px rgb(84, 208, 126);
 }
 
 #banner h2{
@@ -294,6 +298,7 @@ table {
 {
     border: 5px solid   rgb(84, 208, 126);
     border-radius: 2px;
+    margin-top: 10px;
 }
 #event{
     background: url('../img/viewpage.jpg') no-repeat;
@@ -318,7 +323,6 @@ table {
 .content-holder h2 {
     color:   rgb(84, 208, 126);
     font-size: 32px;
-    padding-bottom: 15px;
     font-family: 'Satisfy', sans-serif;
 }
 .content-holder address strong {
