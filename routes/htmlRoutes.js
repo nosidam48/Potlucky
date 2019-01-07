@@ -67,6 +67,15 @@ module.exports = function (app) {
     });
   });
 
+  // app.get("/mypage", function(req, res) {
+  //   let user = req.user.username
+  //   db.eventTable.findAll({
+  //     where: {
+  //       host_name: user
+  //     }
+  //   })
+  // })
+
   // A get route for searching events in different ways
   app.get("/viewby/:search/:category?", function (req, res) {
     if (req.params.category) {
