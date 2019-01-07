@@ -6,15 +6,15 @@
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           {{#unless user}}
-          <a href="login">Log In</a>
+          <a href="/login">Log In</a>
           {{/unless}}
           {{#if user}}
-          <a href="logout">Log Out</a>
+          <a href="/logout">Log Out</a>
           {{/if}}
           <a href="/">About</a>
-          <a href="view">View Current Events</a>
+          <a href="/view">View Current Events</a>
           {{#if user}}
-          <a href="hostview">View Your Events</a>
+          <a href="/hostview">View Your Events</a>
           {{/if}}
         </div>
         <!-- Use any element to open the sidenav -->
