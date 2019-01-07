@@ -1,40 +1,73 @@
 <!--banner-->
 <section class="headerSmall">
-  <div class="bg-color">
-    <header id="header">
-      <div class="container">
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          {{#unless user}}
-          <a href="login">Log In</a>
-          {{/unless}}
-          {{#if user}}
-          <a href="logout">Log Out</a>
-          {{/if}}
-          <a href="/">About</a>
-          {{#if user}}
-          <a href="host">Host An Event</a>
-          {{/if}}
-          <a href="view">View Current Events</a>
+    <div class="bg-color">
+        <header id="header">
+            <div class="container">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    {{#unless user}}
+                    <a href="login">Log In</a>
+                    {{/unless}}
+                    {{#if user}}
+                    <a href="logout">Log Out</a>
+                    {{/if}}
+                    <a href="/">About</a>
+                    {{#if user}}
+                    <a href="host">Host An Event</a>
+                    {{/if}}
+                    <a href="view">View Current Events</a>
+                </div>
+                <!-- Use any element to open the sidenav -->
+                <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="inner text-center">
+                    <h1 id="logo2">PotLucky</h1>
+                </div>
+            </div>
         </div>
-        <!-- Use any element to open the sidenav -->
-        <span onclick="openNav()" class="pull-right menu-icon">☰</span>
-      </div>
-    </header>
-    <div class="container">
-      <div class="row">
-        <div class="inner text-center">
-          <h1 id="logo2">PotLucky</h1>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 <!-- / banner -->
 
 <h1>Add items to your event!</h1>
 <div class="container item-container">
-    <form action="/host2" method="post" class="form-inline" id="item-form">
+    <form action="/host2" method="post" class="form-inline">
+        <div id="item-form">
+            {{#each items}}
+            <div class='form-group row'>
+                <label for='example-text-input'>Name</label>
+                <div class=''>
+                    <input class='form-control' name='itemName' type='text' value='{{item}}' id='item-name'>
+                </div>
+                <label for='example-text-input'>Quantity</label>
+                <div class=''>
+                    <input class='form-control' name='quantity' type='text' value='{{quantity}}' id='item-quantity'>
+                </div>
+                <label for='itemType'>Type</label>
+                <div class=''>
+                    <select name='type'>
+                        <option>Food</option>
+                        <option>Beverage</option>
+                        <option>Equipment</option>
+                        <option>Entertainment</option>
+                    </select>
+                </div>
+                <label for='cost'>Cost</label>
+                <div class=''>
+                    <input class='form-control' name='cost' type='text' {{#if cost}}value='{{cost}}'{{/if}} id='cost'>
+                </div>
+                <div class=>
+                    <button class='btn btn-success btn-delete delete-row' id='delete-row' type='button'>
+                        X
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <input type="hidden" name="mydata" value="{{event_id}}">
         <div class="row col-12">
             <button class="btn btn-success btn-add" id="add-items" type="button">
                 Add more items
@@ -49,32 +82,32 @@
 
 <!-- footer -->
 <footer class="footer text-center">
-  <div class="footer-top">
-    <div class="row">
-      <div class="col-md-offset-3 col-md-6 text-center">
-        <div class="widget">
-          <h4 class="widget-title">PotLucky</h4>
-          <address>UCF<br>Orlando, FL</address>
-          <div class="social-list">
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="https://github.com/nosidam48/Potlucky"><i class="fa fa-github" aria-hidden="true"></i></a>
-          </div>
-          <p class="copyright clear-float">
-            © Delicious Theme. All Rights Reserved
-            <div class="credits">
-              <!--
+    <div class="footer-top">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 text-center">
+                <div class="widget">
+                    <h4 class="widget-title">PotLucky</h4>
+                    <address>UCF<br>Orlando, FL</address>
+                    <div class="social-list">
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://github.com/nosidam48/Potlucky"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="copyright clear-float">
+                        © Delicious Theme. All Rights Reserved
+                        <div class="credits">
+                            <!--
                   All the links in the footer should remain intact.
                   You can delete the links only if you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Delicious
                 -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </p>
+                </div>
             </div>
-          </p>
         </div>
-      </div>
     </div>
-  </div>
 </footer>
 <!-- / footer -->
 
@@ -86,6 +119,3 @@
 <script src="/js/custom.js"></script>
 <script src="/js/contactform.js"></script>
 <script src="/js/host.js"></script>
-<script>
-    var event_id = "{{event_id}}"
-</script>

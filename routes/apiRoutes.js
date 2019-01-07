@@ -31,7 +31,7 @@ module.exports = function (app) {
     if (Array.isArray(req.body.itemName)) {
       // A for loop to add each item from the forms to the itemtable
       for (var i = 0; i < req.body.itemName.length; i++)
-        db.itemTable.create({ event_id: req.body.mydata[i], item: req.body.itemName[i], quantity: req.body.quantity[i], item_type: req.body.type[i], cost: req.body.cost[i] }).then(function (dbItems) {
+        db.itemTable.create({ event_id: req.body.mydata, item: req.body.itemName[i], quantity: req.body.quantity[i], item_type: req.body.type[i], cost: req.body.cost[i] }).then(function (dbItems) {
         });
     }
     // Else just insert one item to the itemtable
