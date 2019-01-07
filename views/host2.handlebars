@@ -12,7 +12,9 @@
           <a href="logout">Log Out</a>
           {{/if}}
           <a href="/">About</a>
+          {{#if user}}
           <a href="host">Host An Event</a>
+          {{/if}}
           <a href="view">View Current Events</a>
         </div>
         <!-- Use any element to open the sidenav -->
@@ -31,7 +33,7 @@
 <!-- / banner -->
 
 <h1>Add items to your event!</h1>
-<div class="container">
+<div class="container item-container">
     <form action="/host2" method="post" class="form-inline" id="item-form">
         <div class="row col-12">
             <button class="btn btn-success btn-add" id="add-items" type="button">
@@ -39,8 +41,8 @@
             </button>
         </div>
         <br>
-        <div class="form-group row col-12">
-            <input action="/host2" type="submit" class="btn btn-primary" id="form-submit"></input>
+        <div class="form-group row col-12 item-button">
+            <a href="/view2/{{event_id}}"><input action="/host2" type="submit" class="btn btn-primary" id="form-submit"></input></a>
         </div>
     </form>
 </div>

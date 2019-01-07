@@ -1,7 +1,8 @@
+//function to open the sidenav
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
-
+// function to close the sidenav
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }

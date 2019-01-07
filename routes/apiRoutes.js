@@ -1,19 +1,23 @@
+// variables to require models and passport
 var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
+  // A get route to retrieve all events from event table
   app.get("/api/events", function (req, res) {
     db.events.findAll({}).then(function (dbEvents) {
       res.json(dbEvents);
     });
   });
 
+  // A post route at /host that takes the information from the event form and creates a new event with that information
   app.post("/host", function (req, res) {
     console.log(req.body.date);
     console.log(req.body.date + " " + req.body.time);
-
+    // Creating the new event table with form info
     db.eventTable.create({ host_name: req.body.host_name, event_name: req.body.eventName, event_location: req.body.location, event_date: (req.body.date + "T" + req.body.time+":00.000Z"), event_description: req.body.description, category: req.body.type }).then(function (dbEvents) {
       console.log(dbEvents.get({ plain: true }));
+      // display host2 and send it the event_id 
       res.render("host2", { event_id: dbEvents.get({ plain: true }).id })
 
 
@@ -23,16 +27,16 @@ module.exports = function (app) {
   // Create a new example
   app.post("/host2", function (req, res) {
     console.log(req.body);
+    // If there are multiple items
     if (Array.isArray(req.body.itemName)) {
+      // A for loop to add each item from the forms to the itemtable
       for (var i = 0; i < req.body.itemName.length; i++)
         db.itemTable.create({ event_id: req.body.mydata[i], item: req.body.itemName[i], quantity: req.body.quantity[i], item_type: req.body.type[i], cost: req.body.cost[i] }).then(function (dbItems) {
-          // console.log(res.json(dbItems));
         });
     }
+    // Else just insert one item to the itemtable
     else {
       db.itemTable.create({ event_id: req.body.mydata, item: req.body.itemName, quantity: req.body.quantity, item_type: req.body.type, cost: req.body.cost }).then(function (dbItems) {
-
-        // console.log(res.json(dbItems));
       });
     }
   });

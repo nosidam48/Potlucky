@@ -6,14 +6,16 @@
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     {{#unless user}}
-                    <a href="login">Log In</a>
+                    <a href="/login">Log In</a>
                     {{/unless}}
                     {{#if user}}
-                    <a href="logout">Log Out</a>
+                    <a href="/logout">Log Out</a>
                     {{/if}}
                     <a href="/">About</a>
-                    <a href="host">Host An Event</a>
-                    <a href="view">View Current Events</a>
+                    {{#if user}}
+                    <a href="/">Host An Event</a>
+                    {{/if}}
+                    <a href="/view">View Current Events</a>
                 </div>
                 <!-- Use any element to open the sidenav -->
                 <span onclick="openNav()" class="pull-right menu-icon">☰</span>
@@ -32,21 +34,50 @@
 
 <!--about-->
 <section id="about" class="section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center marb-35">
-        <h1 class="header-h">Your Events</h1>
-        <p class="header-p">See all your events here!
-          <br></p>
-          <br>
-      </div>
-        <div class="col-md-12 col-sm-12">
-          <img src="img/res01.jpg" alt="" class="img-responsive">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center marb-35">
+                <h1 class="header-h">Items Needed for {{#each events}}{{event_name}}{{/each}}</h1>
+                <h4>Hosted By: {{user.username}}</h4>
+                <h4>Date:</h4>
+                <h4>Time:</h4>
+                <p class="header-p">Put your mouth where your money is!
+                    <br></p>
+                <br>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th class="text-center" scope="col">Item</th>
+                            <th class="text-center" scope="col">Quantity</th>
+                            <th class="text-center" scope="col">Type</th>
+                            <th class="text-center" scope="col">Cost</th>
+                            <th class="text-center" scope="col">Who's Got It?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each items}}
+                        <tr>
+                            <th scope="row">{{math @index}}</th>
+                            <td>{{item}}</td>
+                            <td>{{quantity}}</td>
+                            <td>{{item_type}}</td>
+                            <td>{{cost}}</td>
+                            <td id="bringer-td"><button id="bringer-button">Bring It!</button></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <img src="img/res01.jpg" alt="" class="img-responsive">
+            </div>
         </div>
-      </div>
-      <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
     </div>
-  </div>
+    </div>
 </section>
 
 <!-- footer -->
@@ -87,3 +118,4 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/contactform.js"></script>
+<script src="/js/host.js"></script>

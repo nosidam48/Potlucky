@@ -1,7 +1,9 @@
 // optionsArray
 let optionsArray = ["Food","Beverage","Equipment","Entertainment"];
 
+// When the add-items button is clicked
 $("#add-items").on("click", function() {
+    // prepend the item form to the item-form div
     $("#item-form").prepend(
         "<div class='form-group row'>\
             <label for='example-text-input'>Name</label>\
@@ -33,12 +35,28 @@ $("#add-items").on("click", function() {
         </div>"
     )
     
+    // Create an input variable to access the event-id for the items to connect to the event
     var input = $("<input>").attr("type", "hidden").attr("name", "mydata").val(event_id);
+    // Append the hidden value to the item-form div
     $("#item-form").append(input)
     
-    
+    // When the delete-row button is clicked
     $(".delete-row").on("click", function() {
         console.log("this click worked");
+        // remove the closest row to the button
         $(this).closest('.row').remove() 
     })
+});
+
+// When the bringer-button is clicked
+$("#bringer-button").on("click", function() {
+    console.log("clicky clicky");
+    // Display the username
+    $("#bringer-td").html("{{user.username}}")
+})
+
+// When the form-submit button is clicked
+$("#form-submit").on("click", function() {
+  // Append the information to the item-container div  
+ $(".item-container").append("<h3>Thanks for submitting your necessities!</h3><a href='/view2/8'>View Event</a>")
 })
