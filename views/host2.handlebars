@@ -57,7 +57,7 @@
                 </div>
                 <label for='cost'>Cost</label>
                 <div class=''>
-                    <input class='form-control' name='cost' type='text' {{#if cost}}value='{{cost}}'{{/if}} id='cost'>
+                    <input class='form-control' name='cost' type='text' {{#if cost}}value='{{cost}}'{{/if}}id='cost'>
                 </div>
                 <div class=>
                     <button class='btn btn-success btn-delete delete-row' id='delete-row' type='button'>
@@ -78,6 +78,10 @@
             <a href="/view2/{{event_id}}"><input action="/host2" type="submit" class="btn btn-primary" id="form-submit"></input></a>
         </div>
     </form>
+    <div id="thanks" style="display:none">
+    <h3>Thanks for submitting your necessities!</h3>
+    <a href="/view2/1">View Event</a>
+    </div>
 </div>
 
 <!-- footer -->
@@ -110,7 +114,9 @@
     </div>
 </footer>
 <!-- / footer -->
-
+<script>
+    var event_id = {{event_id}}
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/jquery.min.js"></script>

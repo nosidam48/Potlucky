@@ -28,6 +28,11 @@ module.exports = function (app) {
   app.post("/host2", function (req, res) {
     console.log(req.body);
     // If there are multiple items
+    db.itemTable.destroy({
+      where: {
+          event_id: req.body.mydata
+      }
+  })
     if (Array.isArray(req.body.itemName)) {
       // A for loop to add each item from the forms to the itemtable
       for (var i = 0; i < req.body.itemName.length; i++)
