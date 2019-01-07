@@ -49,11 +49,35 @@ $(".delete-row").on("click", function() {
 })
 // When the bringer-button is clicked
 $(".bringer-button").on("click", function() {
-    $.post()
-    var location = "#bringer-td" + $(this).attr("id");
-    // Display the username
-    
-    $(location).html(username)
+    var id = $(this).attr("value");
+    if ($(this).attr("data")=="false"){
+    $(this).text(username);
+    $.ajax({
+        url: '/api/bring',
+        type: 'PUT',
+        data:{
+        bringer_name: username,
+        item_id: id},
+        success: function(response) {
+          console.log(response);
+        }
+     });
+    $(this).attr("data", "true");
+    }
+    else if ($(this).attr("data")=="true"){
+    $.ajax({
+        url: '/api/bring',
+        type: 'PUT',
+        data: {
+        bringer_name: null,
+        item_id: id},
+        success: function(response) {
+          console.log(response);
+        }
+     });
+    $(this).text("I'll Bring It!");
+    $(this).attr("data", "false");
+    }
 })
 
 // When the form-submit button is clicked

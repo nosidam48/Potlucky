@@ -132,7 +132,7 @@ module.exports = function (app) {
         user: req.user,
         items: dbItems,
         helpers: {
-          math: function (value, options) { return parseInt(value) + 1; },
+          math: function (value, options) { return parseInt(value) + 1; }
         }
       })
     })

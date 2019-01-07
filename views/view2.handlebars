@@ -1,4 +1,5 @@
 <!--banner-->
+
 <section class="headerSmall">
     <div class="bg-color">
         <header id="header">
@@ -61,11 +62,13 @@
                         {{#each items}}
                         <tr>
                             <th scope="row">{{math @index}}</th>
-                            <td>{{item}}</td>
-                            <td>{{quantity}}</td>
-                            <td>{{item_type}}</td>
-                            <td>{{cost}}</td>
-                            <td id="bringer-td{{math @index}}"><button class="bringer-button" id = "{{math @index}}">I'll Bring It!</button></td>
+                            <td >{{item}}</td>
+                            <td >{{quantity}}</td>
+                            <td >{{item_type}}</td>
+                            <td >{{cost}}</td>
+                            <td id="bringer-td{{math @index}}"><button class="bringer-button" data="false"
+                                    value="{{id}}" id="{{math @index}}">I'll Bring
+                                    It!</button></td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -110,9 +113,7 @@
     </div>
 </footer>
 <!-- / footer -->
-<script>
-    var username = "{{user.username}}";
-</script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/jquery.min.js"></script>
@@ -121,3 +122,21 @@
 <script src="/js/custom.js"></script>
 <script src="/js/contactform.js"></script>
 <script src="/js/host.js"></script>
+<script>
+    var username = "{{user.username}}"
+    var i = 1;
+    "{{#each items}}"
+        if("{{bringer_name}}"!=""){
+            if ("{{bringer_name}}"==username){
+                $("#"+i).attr("data", "true").text(username);
+            }
+            else {
+                $("#bringer-td"+i).html("{{bringer_name}}")
+            }
+        }
+        else if(!username){
+            $("#bringer-td"+i).html("Log in to Bring It!");
+        }
+        i++;
+    "{{/each}}"
+</script>

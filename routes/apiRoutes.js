@@ -51,7 +51,15 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     res.json("/");
   });
-
+  app.put("/api/bring", function(req, res) {
+    console.log(req.body);
+    db.itemTable.update(
+      {bringer_name: req.body.bringer_name},
+      {where: {id: req.body.item_id}}
+    ).then(function(update){
+      res.json(update);
+    })
+  })
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
