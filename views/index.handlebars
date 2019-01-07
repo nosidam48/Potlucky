@@ -94,23 +94,28 @@
             </div> --}}
             <div class="col-md-12 col-sm-6 details-text">
               <div class="content-holder">
-                {{#each event}}
-                <h2>{{event_name}}</h2>
-                <address>
-                  <strong>Host: </strong>
-                  {{host_name}}
-                  <br>
-                  <strong>Location: </strong>
-                  {{event_location}}
-                  <br>
-                  <strong>Date: </strong>
-                  {{event_date}}
-                  <br>
-                  <strong>Description: </strong>
-                  {{event_description}}
-                </address>
-                {{/each}}
-                <a class="btn btn-imfo btn-read-more" href="/view">See more</a>
+                <div id="about">
+                  {{#each event}}
+                  <img src="../styles/img/{{category}}.jpg" class="card-img-top" style="height:20rem">
+                  <h2>{{event_name}}</h2>
+                  <address>
+                    <a class="btn btn-imfo btn-read-more" href="/view2/{{[id]}}" id="{{[id]}}">View Event</a>
+                    <br>
+                    <strong>Host: </strong>
+                    {{host_name}}
+                    <br>
+                    <strong>Location: </strong>
+                    {{event_location}}
+                    <br>
+                    <strong>Date: </strong>
+                    {{event_date}}
+                    <br>
+                    <strong>Description: </strong>
+                    {{event_description}}
+                  </address>
+                  <a class="btn btn-imfo btn-read-more" href="/view">View All Events</a>
+                  {{/each}}
+                </div>
               </div>
             </div>
           </div>
