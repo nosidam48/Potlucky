@@ -134,6 +134,9 @@
                 $("#bringer-td"+i).html("{{bringer_name}}")
             }
         }
+        else if(!username){
+            $("#bringer-td"+i).html("Log in to Bring It!");
+        }
         i++;
     "{{/each}}"
 </script>
