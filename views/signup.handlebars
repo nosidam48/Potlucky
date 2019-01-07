@@ -1,32 +1,34 @@
 <!--banner-->
 <section class="headerSmall">
-    <div class="bg-color">
-        <header id="header">
-            <div class="container">
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    {{#unless user}}
-                    <a href="login">Log In</a>
-                    {{/unless}}
-                    {{#if user}}
-                    <a href="logout">Log Out</a>
-                    {{/if}}
-                    <a href="/">About</a>
-                    <a href="host">Host An Event</a>
-                    <a href="view">View Current Events</a>
-                </div>
-                <!-- Use any element to open the sidenav -->
-                <span onclick="openNav()" class="pull-right menu-icon">☰</span>
-            </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <div class="inner text-center">
-                    <h1 id="logo2">PotLucky</h1>
-                </div>
-            </div>
+  <div class="bg-color">
+    <header id="header">
+      <div class="container">
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          {{#unless user}}
+          <a href="login">Log In</a>
+          {{/unless}}
+          {{#if user}}
+          <a href="logout">Log Out</a>
+          {{/if}}
+          <a href="/">About</a>
+          {{#if user}}
+          <a href="host">Host An Event</a>
+          {{/if}}
+          <a href="view">View Current Events</a>
         </div>
+        <!-- Use any element to open the sidenav -->
+        <span onclick="openNav()" class="pull-right menu-icon">☰</span>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="inner text-center">
+          <h1 id="logo2">PotLucky</h1>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- / banner -->
 
@@ -62,8 +64,8 @@
     </div>
   </div>
 
- <!-- footer -->
- <footer class="footer text-center">
+  <!-- footer -->
+  <footer class="footer text-center">
     <div class="footer-top">
       <div class="row">
         <div class="col-md-offset-3 col-md-6 text-center">
@@ -92,11 +94,11 @@
     </div>
   </footer>
   <!-- / footer -->
-<script src="/js/index.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery.easing.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/custom.js"></script>
-<script src="/js/contactform.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/signup.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.easing.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/custom.js"></script>
+  <script src="/js/contactform.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>

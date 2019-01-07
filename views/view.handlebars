@@ -12,7 +12,9 @@
                     <a href="logout">Log Out</a>
                     {{/if}}
                     <a href="/">About</a>
+                    {{#if user}}
                     <a href="host">Host An Event</a>
+                    {{/if}}
                     <a href="view">View Current Events</a>
                 </div>
                 <!-- Use any element to open the sidenav -->
@@ -54,14 +56,35 @@
             </div>
 
             <br>
-            <p>this is a test</p>
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th class="text-center" scope="col">Event Name</th>
+                            <th class="text-center" scope="col">Event Date</th>
+                            <th class="text-center" scope="col">Event Location</th>
+                            <th class="text-center" scope="col">Host Name</th>
+                            <th class="text-center" scope="col">Event description</th>
+                            <th class="text-center" scope="col">Event Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
             {{#each events}}
-            <div>
-            <a href="/view2/{{[id]}}" id="{{[id]}}">
-                {{event_name}}
-                </a>
-            </div>
+            <tr>
+                <td>{{id}}</td>
+                <td id="event-button"><a href="/view2/{{[id]}}" id="{{[id]}}">
+                    {{event_name}}
+                </a></td>
+                <td>{{event_date}}</td>
+                <td>{{event_location}}</td>
+                <td>{{host_name}}</td>
+                <td>{{event_description}}</td>
+                <td>{{category}}</td>
+            </tr>
             {{/each}}
+            </tbody>
+            </table>
         </div>
     </div>
     <div class="col-md-1"></div>
