@@ -16,6 +16,9 @@
           <a href="host">Host An Event</a>
           {{/if}}
           <a href="view">View Current Events</a>
+          {{#if user}}
+          <a href="hostview">View Your Events</a>
+          {{/if}}
         </div>
         <!-- Use any element to open the sidenav -->
         <span onclick="openNav()" class="pull-right menu-icon">☰</span>

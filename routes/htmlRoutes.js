@@ -53,7 +53,7 @@ module.exports = function (app) {
     var search = "event_date";
     db.eventTable.findAll({
       order: [[search]],
-      limit: 10,
+      limit: 20,
       where: {
         "category": category,
         event_date: {
@@ -159,6 +159,40 @@ module.exports = function (app) {
     }
     res.render("signup");
   });
+  app.get("/hostview/:category?", function(req, res) {
+    if (req.params.category) {
+      var category = req.params.category;
+    }
+    else {
+      var category = { [Op.ne]: null };
+    }
+    db.eventTable.findAll({
+      where: {
+        "category": category,
+        "host_name": req.user.username
+      }
+    }).then(function (dbEvents) {
+      res.render("view", {
+        user: req.user,
+        events: dbEvents,
+        hv: true
+      })
+    })
+  
+  })
+  app.get("/hostview2/:id", function(req, res) {
+    db.itemTable.findAll({
+      where: {
+        event_id: req.params.id
+      }
+    }).then(function (dbItems) {
+      res.render("host2", {
+        event_id: req.params.id,
+        user: req.user,
+        items: dbItems
+      });
+    });
+  })
   // A get route to display the homepage if the route is anything unknown
   app.get("*", function (req, res) {
     res.render("index");

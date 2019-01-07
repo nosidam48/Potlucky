@@ -14,6 +14,7 @@
                     <a href="/">About</a>
                     {{#if user}}
                     <a href="host">Host An Event</a>
+                    <a href="hostview">View Your Events</a>
                     {{/if}}
                 </div>
                 <!-- Use any element to open the sidenav -->
@@ -49,19 +50,19 @@
             </button>
             <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
                 <li>
-                    <a class="dropdown-item" href="/view/Potluck">Potluck</a>
+                    <a class="dropdown-item" href="/{{#if hv}}host{{/if}}view/Potluck">Potluck</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/view/Convention">Convention</a>
+                    <a class="dropdown-item" href="/{{#if hv}}host{{/if}}view/Convention">Convention</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/view/TailGate">TailGate</a>
+                    <a class="dropdown-item" href="/{{#if hv}}host{{/if}}view/TailGate">TailGate</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/view/Medieval%20Banquet">Medieval Banquet</a>
+                    <a class="dropdown-item" href="/{{#if hv}}host{{/if}}view/Medieval%20Banquet">Medieval Banquet</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/view/Bake%20Sale">Bake Sale</a>
+                    <a class="dropdown-item" href="/{{#if hv}}host{{/if}}view/Bake%20Sale">Bake Sale</a>
                 </li>
             </div>
         </div>
@@ -71,7 +72,7 @@
         <br>
         <br>
         {{#each events}}
-        
+
         <div class="content-holder">
             <div class="card" class="col-md-6 col-sm-12 details-text">
                 <img src="../styles/img/{{category}}.jpg" class="card-img-top" style="height:20rem">
@@ -79,10 +80,10 @@
 
                     <h2>{{event_name}}</h2>
                     <address>
-                        <a class="btn btn-imfo btn-read-more" href="/view2/{{[id]}}" id="{{[id]}}">View Event</a>
+                        <a class="btn btn-imfo btn-read-more" href="/{{#if ../hv}}host{{/if}}view2/{{[id]}}" id="{{[id]}}">View Event</a>
                         <br>
-                        <strong id = "date{{id}}">Date: </strong>
-            
+                        <strong id="date{{id}}">Date: </strong>
+
                         <br>
                         <strong>Host: </strong>
                         {{host_name}}
@@ -148,6 +149,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
 <script>
     "{{#each events}}"
-        $("#date"+"{{id}}").append(moment("{{event_date}}").format("M/D/YYYY h:mm A"))
+    $("#date" + "{{id}}").append(moment("{{event_date}}").format("M/D/YYYY h:mm A"))
     "{{/each}}"
 </script>
