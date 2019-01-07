@@ -1,7 +1,12 @@
 // Set up the item object for our item table using sequelize
 module.exports = function (sequelize, DataTypes) {
     var items = sequelize.define("itemTable", {
-
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true
+        },
         event_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
