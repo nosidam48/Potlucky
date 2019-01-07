@@ -60,5 +60,5 @@ $(".bringer-button").on("click", function() {
 // When the form-submit button is clicked
 $("#form-submit").on("click", function() {
   // Append the information to the item-container div  
- $(".item-container").append("<h3>Thanks for submitting your necessities!</h3><a href='/view2/8'>View Event</a>")
+ $(".item-container").append("<h3>Thanks for submitting your necessities!</h3><a href='/view2/" + event_id + "'>View Event</a>")
 })
