@@ -36,52 +36,53 @@
 
   <form action="/host" method="post" id="event-form">
     <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
-  <div class="col-10">
-    <input class="form-control" name="eventName" type="text" value="" id="event-name">
-  </div>
-  </div>
-  <div class="form-group">
-    <input type="hidden" name="host_name" id="host_name" value="{{user.username}}">
-  </div>
-  <div class="form-group row">
-  <label for="example-text-input" class="col-2 col-form-label">Location</label>
-  <div class="col-10">
-    <input class="form-control" name="location" type="text" value="" id="location">
-  </div>
-  </div>
-  <div class="form-group row">
-  <label for="example-date-input" class="col-2 col-form-label">Date</label>
-  <div class="col-10">
-    <input class="form-control" name="date" type="date" value="" id="date">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-time-input" class="col-2 col-form-label">Time</label>
-  <div class="col-10">
-    <input class="form-control" name="time" type="time" value="" id="time">
-  </div>
-</div>
-<div class="form-group row">
-    <label for="event-type" class="col-2">Party Type</label>
-    <div class="col-10">
-    <select class="form-control" name="type" id="event-type">
-    <option disabled selected value> -- select an option -- </option>
-      <option>Potluck</option>
-      <option>TailGate</option>
-      <option>Convention</option>
-      <option>Medieval Banquet</option>
-      <option>Bake Sale</option>
-    </select>
+      <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
+      <div class="col-10">
+        <input class="form-control" name="eventName" type="text" value="" id="event-name">
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="hidden" name="host_name" id="host_name" value="{{user.username}}">
     </div>
     <div class="form-group row">
-      <label for="exampleFormControlTextarea1" class="col-2">Party Description</label>
-      <textarea class="form-control col-10" name="description" id="exampleFormControlTextarea1" rows="2"></textarea>
+      <label for="example-text-input" class="col-2 col-form-label">Location</label>
+      <div class="col-10">
+        <input class="form-control" name="location" type="text" value="" id="location">
+      </div>
     </div>
-    <div class="form-group row col-12">
-      <input action="/host" type="submit" class="btn btn-primary" id="event-submit"></input>
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label">Date</label>
+      <div class="col-10">
+        <input class="form-control" name="date" type="date" value="" id="date">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label">Time</label>
+      <div class="col-10">
+        <input class="form-control" name="time" type="time" value="" id="time">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="event-type" class="col-2">Party Type</label>
+      <div class="col-10">
+        <select class="form-control" name="type" id="event-type">
+          <option disabled selected value> -- select an option -- </option>
+          <option>Potluck</option>
+          <option>TailGate</option>
+          <option>Convention</option>
+          <option>Medieval Banquet</option>
+          <option>Bake Sale</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <label for="exampleFormControlTextarea1" class="col-2">Party Description</label>
+        <textarea class="form-control col-10" name="description" id="exampleFormControlTextarea1" rows="2"></textarea>
+      </div>
+      <div class="form-group row col-12">
+        <input action="/host" type="submit" class="btn btn-primary" id="event-submit"></input>
 
-    </div>
+      </div>
+      </div>
   </form>
 </div>
 
@@ -112,8 +113,8 @@
         </div>
       </div>
     </div>
-  </footer>
-  <!-- / footer -->
+</footer>
+<!-- / footer -->
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

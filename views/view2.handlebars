@@ -65,7 +65,7 @@
                             <td>{{quantity}}</td>
                             <td>{{item_type}}</td>
                             <td>{{cost}}</td>
-                            <td id="bringer-td"><button id="bringer-button">Bring It!</button></td>
+                            <td id="bringer-td{{math @index}}"><button class="bringer-button" id = "{{math @index}}">I'll Bring It!</button></td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -110,7 +110,9 @@
     </div>
 </footer>
 <!-- / footer -->
-
+<script>
+    var username = "{{user.username}}";
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/jquery.min.js"></script>

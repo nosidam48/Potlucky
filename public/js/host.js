@@ -49,10 +49,12 @@ $("#add-items").on("click", function() {
 });
 
 // When the bringer-button is clicked
-$("#bringer-button").on("click", function() {
+$(".bringer-button").on("click", function() {
     console.log("clicky clicky");
+    var location = "#bringer-td" + $(this).attr("id");
     // Display the username
-    $("#bringer-td").html("{{user.username}}")
+    console.log(location);
+    $(location).html(username)
 })
 
 // When the form-submit button is clicked
