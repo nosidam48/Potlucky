@@ -5,7 +5,7 @@ let optionsArray = ["Food","Beverage","Equipment","Entertainment"];
 $("#add-items").on("click", function() {
     // prepend the item form to the item-form div
     $("#item-form").append(
-        "<div class='form-group row'>\
+        "<div class='form-group row' style = 'padding-right: 20px; padding-left: 20px'>\
             <label for='example-text-input'>Name</label>\
             <div class=''>\
                 <input class='form-control' name='itemName' type='text' value='' id='item-name'>\
