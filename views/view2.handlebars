@@ -14,6 +14,7 @@
                     <a href="/">About</a>
                     {{#if user}}
                     <a href="/host">Host An Event</a>
+                    <a href="/view">View Current Events</a>
                     <a href="/hostview">View Your Events</a>
                     {{/if}}
                 </div>
@@ -24,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="inner text-center">
-                    <h1 id="logo2">PotLucky</h1>
+                     <a href="/"><h1 id="logo2">PotLucky</h1></a>
                 </div>
             </div>
         </div>
@@ -61,10 +62,10 @@
                         {{#each items}}
                         <tr>
                             <th scope="row">{{math @index}}</th>
-                            <td >{{item}}</td>
-                            <td >{{quantity}}</td>
-                            <td >{{item_type}}</td>
-                            <td >{{cost}}</td>
+                            <td class="text-center">{{item}}</td>
+                            <td class="text-center">{{quantity}}</td>
+                            <td class="text-center">{{item_type}}</td>
+                            <td class="text-center">{{cost}}</td>
                             <td id="bringer-td{{math @index}}"><button class="bringer-button" data="false"
                                     value="{{id}}" id="{{math @index}}">I'll Bring
                                     It!</button></td>
