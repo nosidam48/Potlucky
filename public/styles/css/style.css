@@ -53,6 +53,11 @@ table {
     border-top: solid 5px rgb(84, 208, 126);
 }
 
+h4 {
+    font-family: 'Satisfy', sans-serif;
+    color: rgb(84, 208, 126);
+}
+
 #banner h2{
     font-family: 'Satisfy', sans-serif;
     font-size: 53px;
@@ -84,6 +89,10 @@ table {
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     color:   rgb(84, 208, 126);
+}
+#logo2:hover {
+    text-shadow: 2px 2px rgb(84, 208, 126);
+    color: white
 }
 .sidenav {
     height: 100%;
@@ -436,8 +445,8 @@ table {
 }
 
 .footer .footer-top {
-    padding-top: 9rem;
-    padding-bottom: 5rem;
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 .footer .widget-title, .footer .widget-title a {
     font-size: 1.4rem;
@@ -474,6 +483,7 @@ table {
     text-transform: uppercase;
     margin: 0 5px;
 }
+
 @media (min-width: 768px) and (max-width: 980px) {
     .content-holder h2 {
         font-size: 23px;
@@ -514,3 +524,5 @@ table {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+

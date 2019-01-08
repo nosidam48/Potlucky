@@ -17,7 +17,7 @@ module.exports = function (app) {
         }
       }
     }).then(function (dbEvents) {
-      res.render("index", { event: dbEvents, user: req.user });
+      res.render("index", { events: dbEvents, user: req.user });
     })
   });
 
@@ -68,50 +68,6 @@ module.exports = function (app) {
     });
   });
 
-  // A get route for searching events in different ways
-  // app.get("/viewby/:search/:category?", function (req, res) {
-  //   if (req.params.category) {
-  //     var category = req.params.category;
-  //   }
-  //   else {
-  //     var category = { [Op.ne]: null };
-  //   }
-  //   var search = req.params.search;
-  //   db.eventTable.findAll({
-  //     order: [search],
-  //     limit: 10,
-  //     where: {
-  //       "category": category,
-  //       event_date: {
-  //         [Op.gte]: Date.now()
-  //       }
-  //     }
-  //   }).then(function (dbEvents) {
-  //     res.render("view", {
-  //       events: dbEvents,
-  //       user: req.user
-  //     });
-  //   });
-  // });
-
-  // A get route for view2 that displays the view2 page
-  // app.get("/view2", function (req, res) {
-  //   res.render("view2", { user: req.user })
-  // })
-
-  // app.get("/view2/:id?", function (req, res) {
-  //   var eventId = req.params.id;
-  //   db.eventTable.findAll({
-  //     where: {
-  //       id: eventId
-  //     }
-  //   }).then(function(dbEvent) {
-  //     res.render("view2", {
-  //     events: dbEvent,
-  //     })
-  // })
-  // });
-
   // A get route for view2/:id that diplays the items for a specific event by the eventID (req.params.id)
   app.get("/view2/:id?", function (req, res) {
     var eventId = req.params.id;
@@ -130,17 +86,6 @@ module.exports = function (app) {
     ]).then(function(values) {
       const dbItems = values[0]
       const dbEvents = values[1]
-    // })
-    // db.itemTable.findAll({
-    //   where: {
-    //     event_id: eventId
-    //   }
-    // }).then(function (dbItems) {
-    //   db.eventTable.findOne({
-    //     where: {
-    //       id: eventId
-    //     }
-    //   }).then(function (dbEvents) {
         res.render("view2", {
           user: req.user,
           items: dbItems,

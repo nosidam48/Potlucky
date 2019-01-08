@@ -103,7 +103,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 text-center" style="padding:60px;">
-          <h1 class="header-h">Up Coming Events</h1>
+          <h1 class="header-h">Upcoming Events</h1>
         </div>
         <div class="col-md-12" style="padding-bottom:60px;">
           <div class="item active left">
@@ -113,9 +113,10 @@
             <div class="col-md-12 col-sm-6 details-text">
               <div class="content-holder">
                 <div id="about">
-                  {{#each event}}
+                  {{#each events}}
                   <img src="../styles/img/{{category}}.jpg" class="card-img-top" style="height:20rem">
                   <h2>{{event_name}}</h2>
+                  <h4 id="date-div">Date: </h4>
                   <address>
                     <a class="btn btn-imfo btn-read-more" href="/view2/{{[id]}}" id="{{[id]}}">View Event</a>
                     <br>
@@ -124,9 +125,6 @@
                     <br>
                     <strong>Location: </strong>
                     {{event_location}}
-                    <br>
-                    <strong>Date: </strong>
-                    {{event_date}}
                     <br>
                     <strong>Description: </strong>
                     {{event_description}}
@@ -183,3 +181,9 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/contactform.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+<script>
+  "{{#each events}}"
+    $("#date-div").append(moment("{{event_date}}").format("M/D/YYYY h:mm A"))
+    "{{/each}}"
+</script>
