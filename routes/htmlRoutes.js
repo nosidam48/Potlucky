@@ -68,15 +68,6 @@ module.exports = function (app) {
     });
   });
 
-  // app.get("/mypage", function(req, res) {
-  //   let user = req.user.username
-  //   db.eventTable.findAll({
-  //     where: {
-  //       host_name: user
-  //     }
-  //   })
-  // })
-
   // A get route for searching events in different ways
   // app.get("/viewby/:search/:category?", function (req, res) {
   //   if (req.params.category) {
@@ -124,16 +115,32 @@ module.exports = function (app) {
   // A get route for view2/:id that diplays the items for a specific event by the eventID (req.params.id)
   app.get("/view2/:id?", function (req, res) {
     var eventId = req.params.id;
-    db.itemTable.findAll({
-      where: {
-        event_id: eventId
-      }
-    }).then(function (dbItems) {
+
+    return Promise.all([
+      db.itemTable.findAll({
+        where: {
+          event_id: eventId
+        }
+      }),
       db.eventTable.findOne({
         where: {
           id: eventId
         }
-      }).then(function (dbEvents) {
+      })
+    ]).then(function(values) {
+      const dbItems = values[0]
+      const dbEvents = values[1]
+    // })
+    // db.itemTable.findAll({
+    //   where: {
+    //     event_id: eventId
+    //   }
+    // }).then(function (dbItems) {
+    //   db.eventTable.findOne({
+    //     where: {
+    //       id: eventId
+    //     }
+    //   }).then(function (dbEvents) {
         res.render("view2", {
           user: req.user,
           items: dbItems,
@@ -144,7 +151,7 @@ module.exports = function (app) {
         })
       })
     })
-  })
+
   // A get route to display the login page
   app.get("/login", function (req, res) {
     if (req.user) {
@@ -159,6 +166,8 @@ module.exports = function (app) {
     }
     res.render("signup");
   });
+
+  // A get route for showing which parties a user is hosting by category
   app.get("/hostview/:category?", function(req, res) {
     if (req.params.category) {
       var category = req.params.category;
@@ -180,6 +189,8 @@ module.exports = function (app) {
     })
   
   })
+
+  // A get route for showing all parties hosted by the current user
   app.get("/hostview2/:id", function(req, res) {
     db.itemTable.findAll({
       where: {
