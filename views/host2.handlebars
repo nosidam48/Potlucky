@@ -6,16 +6,19 @@
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     {{#unless user}}
-                    <a href="login">Log In</a>
+                    <a href="/login">Log In</a>
                     {{/unless}}
                     {{#if user}}
-                    <a href="logout">Log Out</a>
+                    <a href="/logout">Log Out</a>
                     {{/if}}
                     <a href="/">About</a>
                     {{#if user}}
-                    <a href="host">Host An Event</a>
+                    <a href="/host">Host An Event</a>
                     {{/if}}
-                    <a href="view">View Current Events</a>
+                    <a href="/view">View Current Events</a>
+                    {{#if user}}
+                    <a href="/hostview">View Your Events</a>
+                    {{/if}}
                 </div>
                 <!-- Use any element to open the sidenav -->
                 <span onclick="openNav()" class="pull-right menu-icon">☰</span>
@@ -57,7 +60,7 @@
                 </div>
                 <label for='cost'>Cost</label>
                 <div class=''>
-                    <input class='form-control' name='cost' type='text' {{#if cost}}value='{{cost}}'{{/if}}id='cost'>
+                    <input class='form-control' name='cost' type='text' {{#if cost}} value='{{cost}}' {{/if}} id='cost'>
                 </div>
                 <div class=>
                     <button class='btn btn-imfo btn-read-more btn-delete delete-row' id='delete-row' type='button'>
@@ -79,8 +82,8 @@
         </div>
     </form>
     <div id="thanks" style="display:none">
-    <h3>Thanks for submitting your necessities!</h3>
-    <a href="/view2/{{event_id}}">View Event</a>
+        <h3>Thanks for submitting your necessities!</h3>
+        <a href="/view2/{{event_id}}">View Event</a>
     </div>
 </div>
 
@@ -115,7 +118,7 @@
 </footer>
 <!-- / footer -->
 <script>
-    var event_id = {{event_id}}
+    var event_id = {{ event_id }}
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
