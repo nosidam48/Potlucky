@@ -44,7 +44,7 @@ module.exports = function (app) {
   app.get("/view/:category?", function (req, res) {
     // If there's a category create a variable to hold the current category from req.params
     if (req.params.category) {
-      var category = req.params.category;
+      var category = req.params.category.toLowerCase();
     }
     // Else let category be null (display all events)
     else {
