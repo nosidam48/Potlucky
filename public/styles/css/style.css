@@ -286,6 +286,7 @@ table {
 }
 .marb-35{
     margin-bottom: 35px;
+    border-bottom: 5px solid rgb(84, 208, 126);
 }
 .details-list{
     margin-top: 20px;
@@ -296,7 +297,7 @@ table {
 }
 #about img
 {
-    border: 5px solid   rgb(84, 208, 126);
+    border: 5px solid rgb(84, 208, 126);
     border-radius: 2px;
     margin-top: 10px;
 }
