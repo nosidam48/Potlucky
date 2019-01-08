@@ -183,9 +183,9 @@
 <script src="/js/contactform.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
 <script>
+  let string = "{{category}}"
+    let res = string.toLowerCase()
   "{{#each events}}"
     $("#date-div").append(moment("{{event_date}}").format("M/D/YYYY h:mm A"))
     "{{/each}}"
-    let string = "{{category}}"
-    let res = string.toLowerCase()
 </script>
