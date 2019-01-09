@@ -124,7 +124,7 @@
 <script src="/js/host.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
 <script>
-    var date = "{{events.event_date}}"
+    var date = moment("{{events.event_date}}").add(5,'h');
     $("#date").append(moment(date).format("M/D/YYYY"))
     $("#time").append(moment(date).format("h:mm A"))
     var username = "{{user.username}}"

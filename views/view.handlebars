@@ -155,6 +155,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
 <script>
     "{{#each events}}"
-    $("#date" + "{{id}}").append(moment("{{event_date}}").format("M/D/YYYY h:mm A"))
+    $("#date" + "{{id}}").append(moment("{{event_date}}").add(5,'h').format("M/D/YYYY h:mm A"))
     "{{/each}}"
 </script>
